@@ -1,0 +1,18 @@
+{
+  "name": "F-TIPS",
+  "short_name": "F-TIPS",
+  "theme_color": "white",
+  "background_color": "white",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "billtrendup.svg",
+      "type": "image/svg",
+      "sizes": "any"
+    }
+  ],
+  "splash_pages": null
+}
