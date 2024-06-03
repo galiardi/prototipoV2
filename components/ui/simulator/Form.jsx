@@ -1,11 +1,5 @@
-import { useContext, useEffect, useCallback } from 'react';
-import {
-  Box,
-  Button,
-  Typography,
-  FormControlLabel,
-  Checkbox,
-} from '@mui/material';
+import { useContext, useEffect, useCallback, useRef } from 'react';
+import { Box, Button, Typography, Checkbox } from '@mui/material';
 import { Alternative } from './Alternative';
 import { SimulatorDataContext } from '../../../context/simulatorData';
 import { UIContext } from '../../../context/ui';
@@ -33,6 +27,8 @@ export const Form = () => {
   useEffect(() => {
     cachedSetInflationRate();
   }, [cachedSetInflationRate]);
+
+  const buttonRef = useRef(null);
 
   return (
     <>
@@ -128,11 +124,15 @@ export const Form = () => {
           *Valor propuesto corresponde al promedio de la variación anual del IPC
           de los últimos 25 años contados desde el mes actual.
         </Typography>
-        <Box sx={{ padding: '1.5rem' }}>
+        <Box sx={{ padding: '2rem' }}>
           <Button
             variant={'outlined'}
             color={'secondary'}
-            onClick={onCalculate}
+            ref={buttonRef}
+            onClick={() => {
+              onCalculate();
+              buttonRef.current.scrollIntoView();
+            }}
           >
             Calcular
           </Button>
