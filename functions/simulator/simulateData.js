@@ -41,7 +41,7 @@ export const simulateData = (state) => {
   console.log(alternative1Rate);
 
   const alternative2Rate =
-    state.alternative1SelectorValue === 'Alternativa 2'
+    state.alternative2SelectorValue === 'Alternativa 2'
       ? state.alternative2Rate
       : ratesByProduct[state.alternative2SelectorValue];
 
