@@ -1,5 +1,10 @@
 import { getPresentValue, getBalanceByRate } from '..';
 
+const ratesByProduct = {
+  ['Cuenta de ahorro']: '4.0',
+  ['Inversión en ETFs']: '10.5',
+};
+
 export const simulateData = (state) => {
   const initialCapital = Number(state.initialCapital);
   const annualContribution = Number(state.annualContribution);
@@ -28,13 +33,27 @@ export const simulateData = (state) => {
     inflation: state.inflationRate,
   });
 
+  const alternative1Rate =
+    state.alternative1SelectorValue === 'Alternativa 1'
+      ? state.alternative1Rate
+      : ratesByProduct[state.alternative1SelectorValue];
+
+  console.log(alternative1Rate);
+
+  const alternative2Rate =
+    state.alternative1SelectorValue === 'Alternativa 2'
+      ? state.alternative2Rate
+      : ratesByProduct[state.alternative2SelectorValue];
+
+  console.log(alternative2Rate);
+
   const alternative1 = getBalanceByRate({
     ...state,
-    alternativeRate: state.alternative1Rate,
+    alternativeRate: alternative1Rate,
   });
   const alternative2 = getBalanceByRate({
     ...state,
-    alternativeRate: state.alternative2Rate,
+    alternativeRate: alternative2Rate,
   });
 
   return {

@@ -3,16 +3,14 @@ import { Box, Button, Typography, Checkbox } from '@mui/material';
 import { Alternative } from './Alternative';
 import { SimulatorDataContext } from '../../../context/simulatorData';
 import { UIContext } from '../../../context/ui';
-import BasicPopover from '../BasicPopover';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 export const Form = () => {
   const {
     initialCapital,
     annualContribution,
     years,
-    alternative1Name,
-    alternative2Name,
+    alternative1SelectorValue,
+    alternative2SelectorValue,
     alternative1Rate,
     alternative2Rate,
     inflationRate,
@@ -59,38 +57,6 @@ export const Form = () => {
             </div>
           </div>
 
-          {/* <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'start',
-              justifyContent: 'center',
-            }}
-          >
-            <Checkbox
-              checked={isAdjustContributionsChecked}
-              onChange={() =>
-                changeAdjustContributions(!isAdjustContributionsChecked)
-              }
-              inputProps={{ 'aria-label': 'controlled' }}
-              sx={{ padding: 0 }}
-              color="secondary"
-            />
-            <Box paddingX={'1rem'}>
-              <Typography sx={{ fontSize: '0.7rem' }}>
-                Ajustar aportes futuros para
-              </Typography>
-              <Typography sx={{ fontSize: '0.7rem' }}>
-                mantener su valor presente.
-              </Typography>
-            </Box>
-            <BasicPopover
-              text={
-                'Debido a la inflación, el dinero va perdiendo su valor con el paso del tiempo. Si quieres mantener el valor de tus depósitos, debes reajustarlos según la tasa de inflación. Por ejemplo si te propones depositar 1000 anual, dentro de 1 año deberás depositar 1037 para mantener el valor actual si la inflación es del 3.7%'
-              }
-              icon={<HelpOutlineIcon />}
-            />
-          </Box> */}
-
           <div>
             <div className="inputDiv">
               <p>Años</p>
@@ -115,17 +81,19 @@ export const Form = () => {
           </div>
           <Alternative
             inputName={'alternative1'}
-            alternativeName={alternative1Name}
+            alternativeSelectorValue={alternative1SelectorValue}
             annualInterestRate={alternative1Rate}
             borderColor={'rgba(255, 99, 132, 0.5)'}
             onInputChange={onInputChange}
+            label={'Alternativa 1'}
           />
           <Alternative
             inputName={'alternative2'}
-            alternativeName={alternative2Name}
+            alternativeSelectorValue={alternative2SelectorValue}
             annualInterestRate={alternative2Rate}
             borderColor={'rgba(53, 162, 235, 0.5)'}
             onInputChange={onInputChange}
+            label={'Alternativa 2'}
           />
         </form>
         <Typography sx={{ fontSize: '0.7rem' }}>

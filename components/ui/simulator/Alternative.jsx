@@ -7,70 +7,69 @@ import {
   Typography,
 } from '@mui/material';
 
+const ratesByProduct = {
+  ['Cuenta de ahorro']: '4.0',
+  ['Inversión en ETFs']: '10.5',
+};
+
 export const Alternative = ({
   inputName,
-  alternativeName,
+  alternativeSelectorValue,
   annualInterestRate,
   borderColor,
   onInputChange,
+  label,
 }) => {
   return (
     <>
       <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
         <div id="main">
           <div>
-            <div className="inputDiv">
-              <p>Nombre</p>
-              <input
-                type="text"
-                name={inputName + 'Name'}
-                value={alternativeName}
-                maxLength={25}
-                onChange={onInputChange}
-              />
-            </div>
-          </div>
-
-          <div>
             <FormControl fullWidth>
-              <InputLabel id="category" color={'info'}>
-                Categoría
-              </InputLabel>
+              <InputLabel color={'info'}>{label}</InputLabel>
               <Select
-                // labelId="category"
-                id="selector"
-                value={'formData.category' || ''}
-                name="category"
-                label="Categoría"
+                value={alternativeSelectorValue}
+                name={inputName + 'SelectorValue'}
+                label={label}
                 onChange={onInputChange}
                 color={'info'}
+                fullWidth
               >
-                <MenuItem value={'ahorro-bancoestado'}>
-                  <Typography sx={{ fontSize: '0.7rem' }}>
-                    Cuenta de ahorro BancoEstado
+                <MenuItem value={label}>
+                  <Typography sx={{ fontSize: '0.9rem' }}>
+                    Ingresar tasa
                   </Typography>
                 </MenuItem>
-                <MenuItem value={'inversion-ETFs-trade-republic'}>
-                  <Typography sx={{ fontSize: '0.7rem' }}>
-                    Inversión en ETFs a través de Trade Republic
+                <MenuItem value={'Cuenta de ahorro'}>
+                  <Typography sx={{ fontSize: '0.9rem' }}>
+                    Cuenta de ahorro
+                  </Typography>
+                </MenuItem>
+                <MenuItem value={'Inversión en ETFs'}>
+                  <Typography sx={{ fontSize: '0.9rem' }}>
+                    Inversión en ETFs
                   </Typography>
                 </MenuItem>
               </Select>
             </FormControl>
-            <br></br>
           </div>
-
-          <div>
-            <div className="inputDiv">
-              <p>Tasa de interés anual (%)</p>
-              <input
-                type="number"
-                name={inputName + 'Rate'}
-                value={annualInterestRate}
-                onChange={onInputChange}
-              />
+          {alternativeSelectorValue && (
+            <div>
+              <div>
+                <p>Tasa de interés anual (%):</p>
+                {alternativeSelectorValue === label ? (
+                  <input
+                    type="number"
+                    name={inputName + 'Rate'}
+                    value={annualInterestRate}
+                    onChange={onInputChange}
+                  />
+                ) : (
+                  <p>{ratesByProduct[alternativeSelectorValue]}</p>
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </Box>
 
@@ -82,7 +81,7 @@ export const Alternative = ({
             flex-direction: column;
             justify-content: center;
             margin-top: 0.5rem;
-            padding: 0rem 2rem 0.5rem 2rem;
+            padding: 0rem 1rem 0.5rem 1rem;
             background-color: #fff;
             border: 2px solid ${borderColor};
             border-radius: 1rem;
@@ -91,27 +90,14 @@ export const Alternative = ({
             margin: 0.5rem;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: start;
+            min-width: 16rem;
           }
 
-          }
-          .inputDiv {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            width: 19rem;
-          }
-          input {
-            width: 14rem;
-            border: 1px solid #ddd;
-            font-size: 1rem;
-            font-family: inherit;
-            border-radius: 0.2rem;
-            text-indent: 1rem;
-          }
           p {
             margin: 0;
             padding: 0;
+            margin-bottom: 0.4rem;
           }
         `}
       </style>

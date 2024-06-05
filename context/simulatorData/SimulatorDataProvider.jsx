@@ -11,8 +11,8 @@ export const SimulatorDataProvider = ({ children }) => {
     initialCapital: '',
     annualContribution: '',
     years: '',
-    alternative1Name: 'Alternativa 1',
-    alternative2Name: 'Alternativa 2',
+    alternative1SelectorValue: '',
+    alternative2SelectorValue: '',
     alternative1Rate: '',
     alternative2Rate: '',
     inflationRate: '',
@@ -35,6 +35,8 @@ export const SimulatorDataProvider = ({ children }) => {
     totalContributionWAC: 0,
     totalContributionWACPV: 0,
   });
+
+  console.table(state);
 
   const onInputChange = (e) => {
     let newFormData;
@@ -63,8 +65,8 @@ export const SimulatorDataProvider = ({ children }) => {
       totalContributionPV,
       alternative1,
       alternative2,
-      alternative1label: state.alternative1Name,
-      alternative2label: state.alternative2Name,
+      alternative1label: state.alternative1SelectorValue,
+      alternative2label: state.alternative2SelectorValue,
       totalContributionWAC,
       totalContributionWACPV,
     });
