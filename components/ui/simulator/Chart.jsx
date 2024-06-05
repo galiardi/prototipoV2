@@ -13,6 +13,8 @@ import { FormControlLabel, Box, Typography } from '@mui/material';
 import { PresentValueSwitch } from './PresentValueSwitch';
 import { UIContext } from '../../../context/ui';
 import { SimulatorDataContext } from '../../../context/simulatorData';
+import BasicPopover from '../BasicPopover';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 ChartJS.register(
   CategoryScale,
@@ -135,7 +137,11 @@ export const Chart = () => {
         options={options}
         data={isAdjustContributionsChecked ? dataWAC : data}
       />
-      <Box>
+      <Box
+        display={'flex'}
+        justifyContent={'space-between'}
+        alignItems={'center'}
+      >
         <FormControlLabel
           control={
             <PresentValueSwitch
@@ -153,8 +159,18 @@ export const Chart = () => {
             </Typography>
           }
         />
+        <BasicPopover
+          text={
+            'Con el paso del tiempo, el dinero va perdiendo su valor debido a la inflación. Si deseas saber el valor real que tendrá tu dinero en el futuro, debes transformarlo a valor presente.'
+          }
+          icon={<HelpOutlineIcon />}
+        />
       </Box>
-      <Box>
+      <Box
+        display={'flex'}
+        justifyContent={'space-between'}
+        alignItems={'center'}
+      >
         <FormControlLabel
           control={
             <PresentValueSwitch
@@ -172,6 +188,12 @@ export const Chart = () => {
               valor actual
             </Typography>
           }
+        />
+        <BasicPopover
+          text={
+            'Si quieres mantener el valor de tus depósitos, debes reajustarlos en cada periodo según la tasa de inflación. Por ejemplo si te propones depositar 1000 anual, dentro de 1 año deberás depositar 1037 para mantener el valor actual si la inflación anual es del 3.7%'
+          }
+          icon={<HelpOutlineIcon />}
         />
       </Box>
     </>

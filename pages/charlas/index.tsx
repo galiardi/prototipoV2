@@ -5,7 +5,7 @@ import { Layout } from '../../components/layouts';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
-const Webinar = () => {
+const Charlas = () => {
   return (
     <Layout>
       <Box sx={{ width: '100%' }}>
@@ -27,7 +27,7 @@ const Webinar = () => {
             <Tab eventKey="home" title="Próximas reuniones">
               Por el momento no se han registrado reuniones.
             </Tab>
-            <Tab eventKey="profile" title="Grabaciones en la nube">
+            <Tab eventKey="profile" title="Grabaciones">
               Por el momento no existen grabaciones.
             </Tab>
             <Tab eventKey="contact" title="Contacto">
@@ -47,4 +47,4 @@ const Webinar = () => {
   );
 };
 
-export default Webinar;
+export default Charlas;

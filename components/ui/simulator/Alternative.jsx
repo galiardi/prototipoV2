@@ -1,4 +1,11 @@
-import { Box } from '@mui/material';
+import {
+  Box,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  Typography,
+} from '@mui/material';
 
 export const Alternative = ({
   inputName,
@@ -22,6 +29,35 @@ export const Alternative = ({
                 onChange={onInputChange}
               />
             </div>
+          </div>
+
+          <div>
+            <FormControl fullWidth>
+              <InputLabel id="category" color={'info'}>
+                Categoría
+              </InputLabel>
+              <Select
+                // labelId="category"
+                id="selector"
+                value={'formData.category' || ''}
+                name="category"
+                label="Categoría"
+                onChange={onInputChange}
+                color={'info'}
+              >
+                <MenuItem value={'ahorro-bancoestado'}>
+                  <Typography sx={{ fontSize: '0.7rem' }}>
+                    Cuenta de ahorro BancoEstado
+                  </Typography>
+                </MenuItem>
+                <MenuItem value={'inversion-ETFs-trade-republic'}>
+                  <Typography sx={{ fontSize: '0.7rem' }}>
+                    Inversión en ETFs a través de Trade Republic
+                  </Typography>
+                </MenuItem>
+              </Select>
+            </FormControl>
+            <br></br>
           </div>
 
           <div>

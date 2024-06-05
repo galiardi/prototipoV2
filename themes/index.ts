@@ -1,1 +1,1 @@
-export * from './light-theme';
+export * from './mui-custom-theme';

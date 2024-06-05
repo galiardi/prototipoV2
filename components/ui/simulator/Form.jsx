@@ -3,6 +3,8 @@ import { Box, Button, Typography, Checkbox } from '@mui/material';
 import { Alternative } from './Alternative';
 import { SimulatorDataContext } from '../../../context/simulatorData';
 import { UIContext } from '../../../context/ui';
+import BasicPopover from '../BasicPopover';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 export const Form = () => {
   const {
@@ -45,7 +47,7 @@ export const Form = () => {
               />
             </div>
           </div>
-          <div style={{ marginBottom: 0 }}>
+          <div>
             <div className="inputDiv">
               <p>Aporte anual</p>
               <input
@@ -57,7 +59,7 @@ export const Form = () => {
             </div>
           </div>
 
-          <Box
+          {/* <Box
             sx={{
               display: 'flex',
               alignItems: 'start',
@@ -73,17 +75,23 @@ export const Form = () => {
               sx={{ padding: 0 }}
               color="secondary"
             />
-            <Box>
+            <Box paddingX={'1rem'}>
               <Typography sx={{ fontSize: '0.7rem' }}>
-                Ajustar aportes futuros para mantener
+                Ajustar aportes futuros para
               </Typography>
               <Typography sx={{ fontSize: '0.7rem' }}>
-                su valor presente.
+                mantener su valor presente.
               </Typography>
             </Box>
-          </Box>
+            <BasicPopover
+              text={
+                'Debido a la inflación, el dinero va perdiendo su valor con el paso del tiempo. Si quieres mantener el valor de tus depósitos, debes reajustarlos según la tasa de inflación. Por ejemplo si te propones depositar 1000 anual, dentro de 1 año deberás depositar 1037 para mantener el valor actual si la inflación es del 3.7%'
+              }
+              icon={<HelpOutlineIcon />}
+            />
+          </Box> */}
 
-          <div style={{ marginTop: 0 }}>
+          <div>
             <div className="inputDiv">
               <p>Años</p>
               <input
@@ -127,7 +135,7 @@ export const Form = () => {
         <Box sx={{ padding: '2rem' }}>
           <Button
             variant={'outlined'}
-            color={'secondary'}
+            color={'inherit'}
             ref={buttonRef}
             onClick={() => {
               onCalculate();

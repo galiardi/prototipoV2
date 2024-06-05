@@ -1,16 +1,16 @@
 import { createTheme } from '@mui/material';
-export const lightTheme = createTheme({
+export const muiCustomTheme = createTheme({
   palette: {
-    mode: 'light',
+    // mode: 'light',
     // background: {
     //   default: 'red',
     // },
-    primary: {
-      main: '#fff',
-    },
-    secondary: {
-      main: '#000',
-    },
+    // primary: {
+    //   main: '#fff',
+    // },
+    // secondary: {
+    //   main: '#000',
+    // },
     info: {
       main: '#10162f',
     },

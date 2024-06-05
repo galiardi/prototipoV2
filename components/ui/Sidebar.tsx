@@ -39,9 +39,9 @@ type item = {
 
 const pages: item[] = [
   {
-    text: 'Webinar',
+    text: 'Charlas',
     icon: <CastForEducation fontSize="small" />,
-    url: '/webinar',
+    url: '/charlas',
   },
   // {
   //   text: 'Gestión de gastos',
@@ -49,7 +49,7 @@ const pages: item[] = [
   //   url: '/gestion-de-gastos',
   // },
   {
-    text: 'Simulador',
+    text: `Simulador de ahorro o inversión`,
     icon: <BarChart fontSize="small" />,
     url: '/simulador',
   },

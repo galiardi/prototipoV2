@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { lightTheme } from '../themes';
+import { muiCustomTheme } from '../themes';
 import { AuthProvider } from '../context/auth';
 import { UIProvider } from '../context/ui';
 import { TipsProvider } from '../context/tips';
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <UIProvider>
           <SimulatorDataProvider>
             <TipsProvider>
-              <ThemeProvider theme={lightTheme}>
+              <ThemeProvider theme={muiCustomTheme}>
                 <CssBaseline />
                 <Component {...pageProps} />
               </ThemeProvider>

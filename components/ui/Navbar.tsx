@@ -40,7 +40,7 @@ export const Navbar = () => {
   };
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" sx={{ backgroundColor: '#fff', color: '#000' }}>
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <IconButton size="large" edge="start" onClick={openSidemenu}>
           <MenuOutlinedIcon />
