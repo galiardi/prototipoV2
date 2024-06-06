@@ -1,8 +1,14 @@
 import { getPresentValue, getBalanceByRate } from '..';
 
 const ratesByProduct = {
-  ['Cuenta de ahorro']: '4.0',
-  ['Inversión en ETFs']: '10.5',
+  ['Ahorro platino giro diferido BancoEstado']: {
+    rate: '5.11',
+    description: 'Tasa de interés anual:',
+  },
+  ['Vanguard FTSE All-World UCITS ETF']: {
+    rate: '8.62',
+    description: 'Tasa de crecimiento anual:',
+  },
 };
 
 export const simulateData = (state) => {
@@ -36,14 +42,14 @@ export const simulateData = (state) => {
   const alternative1Rate =
     state.alternative1SelectorValue === 'Alternativa 1'
       ? state.alternative1Rate
-      : ratesByProduct[state.alternative1SelectorValue];
+      : ratesByProduct[state.alternative1SelectorValue].rate;
 
   console.log(alternative1Rate);
 
   const alternative2Rate =
     state.alternative2SelectorValue === 'Alternativa 2'
       ? state.alternative2Rate
-      : ratesByProduct[state.alternative2SelectorValue];
+      : ratesByProduct[state.alternative2SelectorValue].rate;
 
   console.log(alternative2Rate);
 

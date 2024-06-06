@@ -8,8 +8,14 @@ import {
 } from '@mui/material';
 
 const ratesByProduct = {
-  ['Cuenta de ahorro']: '4.0',
-  ['Inversión en ETFs']: '10.5',
+  ['Ahorro platino giro diferido BancoEstado']: {
+    rate: '5.11',
+    description: 'Tasa de interés anual (%):',
+  },
+  ['Vanguard FTSE All-World UCITS ETF']: {
+    rate: '8.62',
+    description: 'Tasa de crecimiento anual (%):',
+  },
 };
 
 export const Alternative = ({
@@ -34,20 +40,21 @@ export const Alternative = ({
                 onChange={onInputChange}
                 color={'info'}
                 fullWidth
+                sx={{ minWidth: '18rem' }}
               >
                 <MenuItem value={label}>
-                  <Typography sx={{ fontSize: '0.9rem' }}>
+                  <Typography sx={{ fontSize: '0.8rem' }}>
                     Ingresar tasa
                   </Typography>
                 </MenuItem>
-                <MenuItem value={'Cuenta de ahorro'}>
-                  <Typography sx={{ fontSize: '0.9rem' }}>
-                    Cuenta de ahorro
+                <MenuItem value={'Ahorro platino giro diferido BancoEstado'}>
+                  <Typography sx={{ fontSize: '0.8rem' }}>
+                    Ahorro platino giro diferido BancoEstado
                   </Typography>
                 </MenuItem>
-                <MenuItem value={'Inversión en ETFs'}>
-                  <Typography sx={{ fontSize: '0.9rem' }}>
-                    Inversión en ETFs
+                <MenuItem value={'Vanguard FTSE All-World UCITS ETF'}>
+                  <Typography sx={{ fontSize: '0.8rem' }}>
+                    Vanguard FTSE All-World UCITS ETF
                   </Typography>
                 </MenuItem>
               </Select>
@@ -56,7 +63,10 @@ export const Alternative = ({
           {alternativeSelectorValue && (
             <div>
               <div>
-                <p>Tasa de interés anual (%):</p>
+                <p>
+                  {ratesByProduct[alternativeSelectorValue]?.description ||
+                    'Tasa de interés anual (%):'}
+                </p>
                 {alternativeSelectorValue === label ? (
                   <input
                     type="number"
@@ -65,7 +75,7 @@ export const Alternative = ({
                     onChange={onInputChange}
                   />
                 ) : (
-                  <p>{ratesByProduct[alternativeSelectorValue]}</p>
+                  <p>{ratesByProduct[alternativeSelectorValue].rate}</p>
                 )}
               </div>
             </div>
@@ -81,7 +91,7 @@ export const Alternative = ({
             flex-direction: column;
             justify-content: center;
             margin-top: 0.5rem;
-            padding: 0rem 1rem 0.5rem 1rem;
+            padding: 0rem 0.5rem 0.5rem 0.5rem;
             background-color: #fff;
             border: 2px solid ${borderColor};
             border-radius: 1rem;

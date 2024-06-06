@@ -123,7 +123,7 @@ export const Form = () => {
             flex-direction: column;
             justify-content: center;
             margin-top: 0.5rem;
-            padding: 0.5rem 1.5rem 1rem 1.5rem;
+            padding: 0.5rem 1rem 1rem 1rem;
             background-color: #fff;
             border: 2px solid #000;
             border-radius: 1rem;
