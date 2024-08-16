@@ -1,7 +1,7 @@
 import { getPresentValue, getBalanceByRate } from '..';
 
 const ratesByProduct = {
-  ['Ahorro platino giro diferido BancoEstado']: {
+  ['Ahorro platino giro diferido']: {
     rate: '5.11',
     description: 'Tasa de interés anual:',
   },

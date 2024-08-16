@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 
 const ratesByProduct = {
-  ['Ahorro platino giro diferido BancoEstado']: {
+  ['Ahorro platino giro diferido']: {
     rate: '5.11',
     description: 'Tasa de interés anual (%):',
   },
@@ -47,9 +47,9 @@ export const Alternative = ({
                     Ingresar tasa
                   </Typography>
                 </MenuItem>
-                <MenuItem value={'Ahorro platino giro diferido BancoEstado'}>
+                <MenuItem value={'Ahorro platino giro diferido'}>
                   <Typography sx={{ fontSize: '0.8rem' }}>
-                    Ahorro platino giro diferido BancoEstado
+                    Ahorro platino giro diferido
                   </Typography>
                 </MenuItem>
                 <MenuItem value={'Vanguard FTSE All-World UCITS ETF'}>
