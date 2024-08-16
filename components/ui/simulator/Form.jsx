@@ -149,6 +149,7 @@ export const Form = () => {
             font-family: inherit;
             border-radius: 0.2rem;
             text-indent: 1rem;
+            font-size: 0.8rem;
           }
           i {
             position: absolute;
@@ -177,6 +178,7 @@ export const Form = () => {
           p {
             margin: 0;
             padding: 0;
+            font-size: 0.8rem;
           }
         `}
       </style>

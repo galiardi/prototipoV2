@@ -141,6 +141,7 @@ export const Chart = () => {
         display={'flex'}
         justifyContent={'space-between'}
         alignItems={'center'}
+        sx={{ marginBottom: '0.5rem' }}
       >
         <FormControlLabel
           control={
@@ -154,7 +155,7 @@ export const Chart = () => {
             />
           }
           label={
-            <Typography sx={{ fontSize: '0.9rem' }}>
+            <Typography sx={{ fontSize: '0.8rem' }}>
               Ajustar a valor presente
             </Typography>
           }
@@ -183,7 +184,7 @@ export const Chart = () => {
             />
           }
           label={
-            <Typography sx={{ fontSize: '0.9rem' }}>
+            <Typography sx={{ fontSize: '0.8rem' }}>
               Ajustar los aportes futuros a valor presente para mantener su
               valor actual
             </Typography>

@@ -40,7 +40,7 @@ export const Alternative = ({
                 onChange={onInputChange}
                 color={'info'}
                 fullWidth
-                sx={{ minWidth: '18rem' }}
+                sx={{ minWidth: '10rem' }}
               >
                 <MenuItem value={label}>
                   <Typography sx={{ fontSize: '0.8rem' }}>
@@ -54,7 +54,7 @@ export const Alternative = ({
                 </MenuItem>
                 <MenuItem value={'Vanguard FTSE All-World UCITS ETF'}>
                   <Typography sx={{ fontSize: '0.8rem' }}>
-                    Vanguard FTSE All-World UCITS ETF
+                    Vanguard ETF
                   </Typography>
                 </MenuItem>
               </Select>
@@ -101,13 +101,18 @@ export const Alternative = ({
             display: flex;
             flex-direction: column;
             align-items: start;
-            min-width: 16rem;
+            min-width: 12rem;
           }
 
           p {
+            font-size: 0.7rem;
             margin: 0;
             padding: 0;
             margin-bottom: 0.4rem;
+          }
+
+          input {
+            width: 12rem;
           }
         `}
       </style>

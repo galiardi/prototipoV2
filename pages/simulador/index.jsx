@@ -6,7 +6,7 @@ const Simulador = () => {
   return (
     <Layout>
       <Box>
-        <Typography variant="h6">Simulador de ahorro o inversión</Typography>
+        <Typography variant="body1">Simulador de ahorro o inversión</Typography>
       </Box>
       <Box>
         <Form />
